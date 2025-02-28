@@ -1,0 +1,159 @@
+Multidimensional Arrays in C++
+
+Arrays declared with more than one dimension are called multidimensional arrays. The most widely used multidimensional arrays are 2D arrays and 3D arrays. These arrays are generally represented in the form of rows and columns.
+
+Multidimensional Array Declaration
+
+Data_Type Array_Name[Size1][Size2]...[SizeN];
+where,
+
+Data_Type: Type of data to be stored in the array.
+Array_Name: Name of the array.
+Size1, Size2,…, SizeN: Size of each dimension.
+
+
+
+Two Dimensional Array in C++
+
+In C++, a two-dimensional array is a grouping of elements arranged in rows and columns. Each element is accessed using two indices: one for the row and one for the column, which makes it easy to visualize as a table or grid.
+
+Syntax of 2D array
+
+data_Type array_name[n][m];
+Where,
+
+n: Number of rows.
+m: Number of columns.
+
+Example: The C++ Program to Illustrate the Two-Dimensional Array
+
+
+
+// c++ program to illustrate the two dimensional array
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    // Declaring 2D array
+    int arr[4][4];
+
+    // Initialize 2D array using loop
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            arr[i][j] = i + j;
+        }
+    }
+
+    // Printing the element of 2D array
+    for (int i = 0; i < 4; i++) {
+        for (int j = 0; j < 4; j++) {
+            cout << arr[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+Output
+0 1 2 3 
+1 2 3 4 
+2 3 4 5 
+3 4 5 6 
+
+
+
+Explanation
+
+In the above code we have declared a 2D array with 4 rows and 4 columns after that we initialized the array with the value of (i+j) in every iteration of the loop. Then we are printing the 2D array using a nested loop and we can see in the below output that there are 4 rows and 4 columns.
+
+
+
+
+
+Three-Dimensional Array in C++
+
+The 3D array uses three dimensions. A collection of various two-dimensional arrays piled on top of one another can be used to represent it. Three indices—the row index, column index, and depth index are used to uniquely identify each element in a 3D array.
+
+Declaration of Three-Dimensional Array in C++
+
+To declare a 3D array in C++, we need to specify its third dimension along with 2D dimensions.
+
+Data_Type Array_Name[D][R][C];
+Where,
+
+Data_Type: Type of data to be stored in each element.
+Array_Name: Name of the array
+D: Number of 2D arrays or Depth of array.
+R: Number of rows in each 2D array.
+C: Number of columns in each 2D array.
+
+
+
+Example
+
+int array[3][3][3];
+
+
+
+
+
+Example: The C++ Program to Illustrate the 3d Array
+
+// C++ program to illustrate the 3d array
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+    // declaring 3d array
+    int arr[3][3][3];
+    // initializing the array
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 3; k++) {
+                arr[i][j][k] = i + j + k;
+            }
+        }
+    }
+
+    // printing the array
+    for (int i = 0; i < 3; i++) {
+        cout << i << "st layer:" << endl;
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 3; k++) {
+                cout << arr[i][j][k] << " ";
+            }
+            cout << endl;
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
+
+Output
+0st layer:
+0 1 2 
+1 2 3 
+2 3 4 
+
+1st layer:
+1 2 3 
+2 3 4 
+3 4 5 
+
+2st layer:
+2 3 4 
+3 4 5 
+4 5 6 
+
+
+Explanation
+
+In the above code, we have declared a 3D array and then initialized it using three nested for loops. After that, we printed all layers of the 3D array again using three nested for loops as seen in the output.
+
